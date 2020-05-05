@@ -2,34 +2,50 @@
   <div id="app">
     <img src="./assets/logo.png">
     <HelloWorld />
-    <comp-header />
+    <comp-header 
+      :title="title"/>
     <list-products />
-    <comp-footer />
+    <list-user 
+      v-bind:listUser='listUser'/>
+    <comp-footer 
+      />
   </div>
 </template>
 
 <script>
 /*
-App
-  Header
-  ListProducts
-    Product
-    Product
-    Product
-  Footer
+App (title, listUser[])
+  Header (title)
+  ListUser (listUser[])
+    User (user - object)
+    User (user - object)
+    User (user - object)
+  Footer (title)
 */
 
 import HelloWorld from './components/HelloWorld'
 import CompHeader from './components/CompHeader'
 import CompFooter from './components/CompFooter'
 import ListProducts from './components/ListProducts'
+import ListUser from './components/ListUser'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      title: 'Hello VueJS - Header ..',
+      listUser: [
+        {id: 1, email: 'email1@gmail.com', active: true},
+        {id: 101, email: 'email2@gmail.com', active: false},
+        {id: 123, email: 'email3@gmail.com', active: true}
+      ]
+    }
+  },
   components: {
     HelloWorld,
     CompHeader,
     ListProducts,
+    ListUser,
     CompFooter
   }
 }
