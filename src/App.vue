@@ -9,6 +9,7 @@
       <list-user 
         :listUser='listUser'
         @deleteUserEvent="handleDeleteUser"/>
+      <demo-ref />
       <comp-footer 
         :title="title"/>
     </div>
@@ -31,6 +32,7 @@ import CompHeader from './components/CompHeader'
 import CompFooter from './components/CompFooter'
 import ListProducts from './components/ListProducts'
 import ListUser from './components/ListUser'
+import DemoRef from './components/DemoRef'
 
 export default {
   name: 'App',
@@ -50,6 +52,7 @@ export default {
     CompHeader,
     ListProducts,
     ListUser,
+    DemoRef,
     CompFooter
   },
   methods: {
