@@ -10,6 +10,9 @@
         :listUser='listUser'
         @deleteUserEvent="handleDeleteUser"/>
       <demo-ref />
+      <demo-slot>
+        <span>Đây là phần custom thêm của thẻ slot</span>
+      </demo-slot>
       <comp-footer 
         :title="title"/>
     </div>
@@ -33,6 +36,7 @@ import CompFooter from './components/CompFooter'
 import ListProducts from './components/ListProducts'
 import ListUser from './components/ListUser'
 import DemoRef from './components/DemoRef'
+import DemoSlot from './components/DemoSlot'
 
 export default {
   name: 'App',
@@ -53,6 +57,7 @@ export default {
     ListProducts,
     ListUser,
     DemoRef,
+    DemoSlot,
     CompFooter
   },
   methods: {
