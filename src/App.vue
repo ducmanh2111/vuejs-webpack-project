@@ -80,6 +80,34 @@ export default {
 
       // console.log('handleDelteUser trong App.vue', data);
     }
+  },
+  beforeCreate() {
+    console.log('beforeCreate', this.title, document.querySelector('.container'));
+  },
+  created() {
+    // Gọi API , call Ajax
+    console.log('created', this.title, document.querySelector('.container'));
+  },
+  beforeMount() {
+    console.log('beforeMount', this.title, document.querySelector('.container'));
+  },
+  mounted() {
+    console.log('mounted', this.title, document.querySelector('.container'));
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate', this.title);
+  },
+  updated() {
+    console.log('updated', this.title);
+    // Xử lí sau khi có sự thay đổi dữ liệu
+  },
+  beforeDestroy() {
+    // Nếu muốn sử dụng JQuery -> Chỉ truy xuất DOM được trong mounted -> có thể sử dụng JS hoặc JQuery để truy xuất trong cấu trúc DOM
+    console.log('beforeDestroy', this.title, document.querySelector('.container'));
+  },
+  destroyed() {
+    // Destroyed các thư viện của bên thứ 3
+    console.log('destroyed', this.title, document.querySelector('.container'));
   }
 }
 /*
